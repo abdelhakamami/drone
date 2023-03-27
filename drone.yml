@@ -1,21 +1,11 @@
 kind: pipeline
+type: kubernetes
 name: default
+
 steps:
 - name: test
-  image: golang:1.10-alpine
+  image: golang
   commands:
-   - "go test"
-- name: build
-  image: golang:1.10-alpine
-  commands:
-   - "go build -o ./myapp"
-- name: publish
-  image: plugins/docker
-  settings:
-   repo: abdelhakavaxia/k8scicd
-   tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
-   username:
-     from_secret: docker_username
-   password:
-     from_secret: docker_password ###
+  - go test
+  - go build
      
