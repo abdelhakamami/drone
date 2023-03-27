@@ -3,9 +3,8 @@ type: kubernetes
 name: default
 
 steps:
-- name: test
-  image: golang
+- name: greeting
+  image: alpine
   commands:
-  - go test
-  - go build
-     
+  - echo hello
+  - echo world
