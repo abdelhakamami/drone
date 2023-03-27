@@ -2,16 +2,16 @@ kind: pipeline
 name: default
 steps:
 - name: test
- image: golang:1.10-alpine
- commands:
+  image: golang:1.10-alpine
+  commands:
    - "go test"
 - name: build
- image: golang:1.10-alpine
- commands:
+  image: golang:1.10-alpine
+  commands:
    - "go build -o ./myapp"
 - name: publish
- image: plugins/docker
- settings:
+  image: plugins/docker
+  settings:
    repo: abdelhakavaxia/k8scicd
    tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
    username:
