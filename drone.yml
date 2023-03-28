@@ -8,3 +8,10 @@ steps:
   commands:
   - echo hello
   - echo world
+- name: git-push
+  image: appleboy/drone-git-push
+  settings:
+    branch: main
+    remote: git@github.com:abdelhakamami/flux.git
+    force: false
+    commit: true
