@@ -15,3 +15,6 @@ steps:
     remote: git@github.com:abdelhakamami/flux.git
     force: false
     commit: true
+    ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDyXkH7V/jvaqJj8ejo4J4M/dzNqANBFnEUh5DZPbpkFTcvOkkI5uSCfL5WRvKMsQy6qyX4sIsbWlZ90j/3QnLqnYFiUYoDnfhASH7UDmXR9sEEwTnRQiUzjIPFP5ka1T2DshMkG4LRr4//RjfxmEbF7E21PZiSUtEBM8O+ivW9xw==
+
+    path: ./clusters/preview/
