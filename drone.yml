@@ -8,12 +8,10 @@ steps:
   commands:
   - echo hello
   - echo world
-- name: git-push
-  image: appleboy/drone-git-push
-  settings:
-    branch: main
-    remote: git@github.com:abdelhakamami/flux.git
-    force: false
-    commit: true
-    ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDyXkH7V/jvaqJj8ejo4J4M/dzNqANBFnEUh5DZPbpkFTcvOkkI5uSCfL5WRvKMsQy6qyX4sIsbWlZ90j/3QnLqnYFiUYoDnfhASH7UDmXR9sEEwTnRQiUzjIPFP5ka1T2DshMkG4LRr4//RjfxmEbF7E21PZiSUtEBM8O+ivW9xw==
-
+- name: deploy
+  image: fluxcd/fluxctl:1.24.1
+  enviornment:
+     FLUXCD_NAMESPACE: flux-sytem
+     KUSTOMIZE_BASE: election-app
+  commands:
+     - fluxctl --k8s-fwd-ns=flux-system --k8s-fwd-labels app=source-controller list-workloads --all-namespaces
