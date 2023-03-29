@@ -8,7 +8,7 @@ steps:
   commands:
   - echo hello
 - name: update-kustomization
-  image: plugins/git
+  image: drone/git
   settings:
     
     repo: git@github.com:abdelhakamami/devops.git
