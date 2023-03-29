@@ -21,6 +21,4 @@ steps:
 
     paths:
       - kustomization.yaml
-  when:
-    event:
-      - push
+  
