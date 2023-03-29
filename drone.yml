@@ -9,6 +9,8 @@ steps:
   - echo hello
 - name: git-push
   image: appleboy/drone-git-push
+  environment:
+    - GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no"
   settings:
     branch: master
     remote: git@github.com:abdelhakamami/devops.git
