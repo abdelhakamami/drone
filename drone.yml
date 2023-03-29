@@ -9,6 +9,9 @@ steps:
   - echo hello
 - name: push commit
   image: appleboy/drone-git-push
+  commands:
+    - chmod 400 ~/.ssh/id_rsa.pub
+
   settings:
     branch: main
     remote: git@github.com:abdelhakamami/devops.git
