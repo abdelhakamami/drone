@@ -13,7 +13,7 @@ steps:
     remote_name: git@github.com:abdelhakamami/devops.git
     branch: main
     local_ref: main
-    path: apps/election-app/
+    path: apps/election-app/kustomization.yaml
     ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDWiwJvUNMWajAiX5xKuZmY+6gDaOQrBiHcciVU5U0o7U/cWC6S9lY3ehDIyrZm7y3LOMKAK0lUR0bPfe2xNUfhzHkNBnDT4VQa7D3697E1k93v8TDOf+CECBDpizPsIe3nlu+fvyF869FhLI5DQ8jPZrmI5ZXO4mSrvi6dcpYpkusBJYin9DKtLR9+Wd1ZFd6tdPY79MgkywOsP3OhXVcksoOCK+uXF/ICiTpGSvf5Tuwu0dl1RLQ87p6ZNwzEtkGDUeHo8eovLodGmqTS8uQDSeAlWR5SIf+1MLlw1vQd/VH4EJJ1KQMUPI9ljiS3YUuPdEfPYU5tUhFyjLR+bAeaGEM8IyN3iWlnOeWP1DWdAIjPEdhKPLmjAGuCiiLQII64G0CTpJUaWa9/AygNDYJvvoHZiBI35hoNs1cUOQQz6dUHdOiOub9o4oBLjgot9d9cr/Dr804hvB0bLnukn9xQK+1H8qKrMYeHOShLMzIn4QV7QGE43FXIUBblFc5PvrE= abdelhak@avaxia
 
     
