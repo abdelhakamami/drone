@@ -9,7 +9,9 @@ steps:
   - echo hello
 - name: push commit
   image: appleboy/drone-git-push
-  
+  environment:
+    ssh_key:
+        from_secret: ssh
    
   #commands:
     #- mkdir -p /root/.ssh &&  chmod 700 /root/.ssh
