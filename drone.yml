@@ -9,9 +9,7 @@ steps:
   - echo hello
 - name: push commit
   image: appleboy/drone-git-push:0.2.1
-  env:
-    ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCODxfrRxk569T8+fPOFBDLFiPEkcBVSMEKwbrGLFG1BpfBUZF/dkUqqWDG5byLiZepEMwX6l1kJMLdq8SivnvW9yHl+AjGjz6tJYWIpQRdhGUSIE6bf1CkXaly3F5R8DWChhyOUnaauqIo/RESWGpjIgVUfdKrMNIhp6HwLE7qr61qnqFFe9wT3p4BHU7G5YtNenLwlBLGF6D0LF3JcmpeOmUXan1QK/b+L03Fscgns4yvUlHGT2hg6JCTmhW9Bu9yJUBDOyNQcSq55HBacKtqKDSwA1+uTHnqYyl9xQjXgipU1I7vRFIsiuEJEbTr4Otf6tgjjWxrw2pYH8CvDWedKB9oe+CL/JOhJ4TZ1XKzuJByxlOKJ0ty5kbzbjBkJdSNWZ75ZKI36fM69R6yjo6TQxDeY0K0VkwE6zp8OcReXCetrkZJOirhUN8NWMYA0HJSkdt9d9yUGyeAnxSmqXEH9kAHUPqYdnyXG39O6bzmyOnaqkEJKhHHRj00OMcGlas= abdelhak@avaxia
-
+  
    
   #commands:
     #- mkdir -p /root/.ssh &&  chmod 700 /root/.ssh
@@ -26,7 +24,7 @@ steps:
     commit_message: "Drone build ${DRONE_COMMIT_SHA:0:7}"
     author_name: "abdelhak amami"
     author_email: "abdelhakamami@gmail.com"
-    ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCODxfrRxk569T8+fPOFBDLFiPEkcBVSMEKwbrGLFG1BpfBUZF/dkUqqWDG5byLiZepEMwX6l1kJMLdq8SivnvW9yHl+AjGjz6tJYWIpQRdhGUSIE6bf1CkXaly3F5R8DWChhyOUnaauqIo/RESWGpjIgVUfdKrMNIhp6HwLE7qr61qnqFFe9wT3p4BHU7G5YtNenLwlBLGF6D0LF3JcmpeOmUXan1QK/b+L03Fscgns4yvUlHGT2hg6JCTmhW9Bu9yJUBDOyNQcSq55HBacKtqKDSwA1+uTHnqYyl9xQjXgipU1I7vRFIsiuEJEbTr4Otf6tgjjWxrw2pYH8CvDWedKB9oe+CL/JOhJ4TZ1XKzuJByxlOKJ0ty5kbzbjBkJdSNWZ75ZKI36fM69R6yjo6TQxDeY0K0VkwE6zp8OcReXCetrkZJOirhUN8NWMYA0HJSkdt9d9yUGyeAnxSmqXEH9kAHUPqYdnyXG39O6bzmyOnaqkEJKhHHRj00OMcGlas= abdelhak@avaxia
+    ssh_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDU4GdMRDaksKLz3IH3e5xThjdC8KbHlkmakt5pBlp9m abdelhakamami@gmail.com
 
       
     
