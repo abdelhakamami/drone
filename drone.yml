@@ -8,7 +8,7 @@ steps:
   commands:
   - echo hello
 - name: push commit
-  image: appleboy/drone-git-push
+  image: appleboy/drone-git-push:0.2.1
   environment:
     ssh_key:
         from_secret: ssh
