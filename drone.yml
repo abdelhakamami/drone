@@ -8,7 +8,7 @@ steps:
   commands:
   - echo hello
 - name: push commit
-  image: appleboy/drone-git-push;0.2.1
+  image: appleboy/drone-git-push:0.2.1
   #commands:
     #- mkdir -p /root/.ssh &&  chmod 700 /root/.ssh
     #- touch ~/.ssh/id_rsa.pub
