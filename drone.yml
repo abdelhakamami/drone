@@ -8,7 +8,7 @@ steps:
   commands:
   - echo hello
 - name: push commit
-  image: appleboy/drone-git-push:alpine
+  image: appleboy/drone-git-push
   
    
   #commands:
