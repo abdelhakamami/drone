@@ -24,7 +24,7 @@ steps:
     commit_message: "Drone build ${DRONE_COMMIT_SHA:0:7}"
     author_name: "abdelhak amami"
     author_email: "abdelhakamami@gmail.com"
-    key: 
+    ssh_key: 
       from_secret: ssh
       
     
