@@ -9,8 +9,6 @@ steps:
   - echo hello
 - name: deploy
   image: alpine/git:2.36.3 
-  environment:
-      GIT_PASSWORD: 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
   commands:
 
     
@@ -23,7 +21,7 @@ steps:
     - cd ..
     - cd devops/apps/election-app/
     - sed -i 's/dev/abc/g' kustomization.yaml 
-    - git add . && git commit -m  "abc" && git push https://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@github.com/abdelhakamami/devops.git
+    - git add . && git commit -m  "abc" && git push https://abdelhakamami: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@github.com/abdelhakamami/devops.git
     
     
 
