@@ -12,16 +12,21 @@ steps:
   commands:
 
     
+    - mkdir -p ~/.ssh
+    - echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/UtsFfg/PHTOFTk54+YnpX1rd3a6mCWNxPU53J2OqllgkzXyDaaxUmJlXQw/ErE32Lt6c86LtpRQleG/DKltCy5eyQrIK9bCOOdGLwFpMBdmydl1luFU2+X2knHRuexuT2LjJBn+0Gv/2fI9tx1Iav4A7sfgV8XrDtTk1COHUHuLixHziA2QkrdAgEPhFlueCUZrlPM/hSAYGn55J3f8ttQwI/ibJSm3j0DAYMbNswxWsVPBI1LjasifrXImA3qNRROlyPOW4rar9GijoDzH0Y2Lcskwp5xEZV506BcZF837rgLgtTkmyTEpZUOeEWMS+uU8TxAk0hg8Il15gr0gyBAiPPVVv30twb2KEeGHH3swT7YpBuJ7wv9YTo/ShWTyg/TlUX/pPpdYplexBkNKnKfNd9+y095B/dWcECbfdgt/R+oe7cwWspOk+Nst3SDVpBpt5ArZRV6jWnHL2dASlunnjjjMzMgHjRlntKqIQGWUgzWXUeTIwo+t+6iK0uEv9eKhotMciRVUhky9Uq8WdVWk3/5paa0hDio6aTN7aeYzWltFNBJhCSiU9sFyae+RPzRObAaCIfguQh6mbiUJGDjTKPupZg/n6LPGsgRP4a01sOQUTJxkOwx5Y3rx8M5TgHgC+MuEiGStrB/ZOLUXaCVmFb5sRS8+1nvej0LYzqw== abdelhakamami@gmail.com
 
+" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan your-git-provider.com >> ~/.ssh/known_hosts
 
-    - git clone https://abdelhakamami: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@github.com/abdelhakamami/devops.git
-    - git clone https://abdelhakamami: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@github.com/abdelhakamami/electionApp.git
+    - git clone git@github.com/abdelhakamami/devops.git
+    - git clone git@github.com/abdelhakamami/electionApp.git
     - cd electionApp && old=$(git rev-parse HEAD | cut -c 1-7)
     - git remote set-url origin https://abdelhakamami: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@github.com/abdelhakamami/devops.git
     - cd ..
     - cd devops/apps/election-app/
     - sed -i 's/dev/abc/g' kustomization.yaml 
-    - git add . && git commit -m  "abc" && git push https://abdelhakamami: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@github.com/abdelhakamami/devops.git
+    - git add . && git commit -m  "abc" && git push origin main
     
     
 
