@@ -17,8 +17,8 @@ steps:
     - chmod 600 ~/.ssh/id_rsa
     - ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-    - git clone git@github.com/abdelhakamami/devops.git
-    - git clone git@github.com/abdelhakamami/electionApp.git
+    - git clone git@github.com:abdelhakamami/devops.git
+    - git clone git@github.com:abdelhakamami/electionApp.git
     - cd electionApp && old=$(git rev-parse HEAD | cut -c 1-7)
     - cd ..
     - cd devops/apps/election-app/
