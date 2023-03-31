@@ -12,6 +12,8 @@ steps:
   environment:
       GIT_PASSWORD: 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
   commands:
+    - git config --global --add url."git@github.com:".insteadOf "https://github.com/"
+
     - git config --global user.email "abdelhakamami@gmail.com"
     #- git config --global user.name "abdelhakamami"
     - git config --global user.password "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"
