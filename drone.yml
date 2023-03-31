@@ -17,13 +17,12 @@ steps:
     - git config --global user.password "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"
     - git config --global credential.helper store
 
-    - git clone https://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@github.com/abdelhakamami/devops.git
+    - git clone https://abdelhakamami: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@github.com/abdelhakamami/devops.git
     - git clone https://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@github.com/abdelhakamami/electionApp.git
     - cd electionApp && old=$(git rev-parse HEAD | cut -c 1-7)
     
     - cd ..
     - cd devops/apps/election-app/
-    - git remote set-url origin https://abdelhakamami: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@github.com/abdelhakamami/devops.git
     - sed -i 's/dev/abc/g' kustomization.yaml 
     - git add . && git commit -m  "abc" && git push https://abdelhakamami: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@github.com/abdelhakamami/devops.git
     
