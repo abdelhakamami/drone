@@ -10,17 +10,17 @@ steps:
 - name: deploy
   image: bitnami/git:latest 
   commands:
-    - git config user.email "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"
-    - git config user.name "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"
-    - git config user.password "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"
-    - git clone https://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@github.com/abdelhakamami/devops.git
-    - git clone https://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@github.com/abdelhakamami/electionApp.git
+    - git config user.email "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@github.com"
+    - git config user.name "drone"
+    - git config user.password "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"
+    - git clone https://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@github.com/abdelhakamami/devops.git
+    - git clone https://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@github.com/abdelhakamami/electionApp.git
     - cd electionApp && old=$(git rev-parse HEAD | cut -c 1-7)
     
     - cd ..
     - cd devops/apps/election-app/
     - sed -i 's/dev/abc/g' kustomization.yaml 
-    - git add . && git commit -m  "abc" && git push https://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@github.com/abdelhakamami/devops.git
+    - git add . && git commit -m  "abc" && git push https://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@github.com/abdelhakamami/devops.git
 
     
     
