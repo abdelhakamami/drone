@@ -24,7 +24,7 @@ steps:
     - cd ..
     - cd devops/apps/election-app/
     - sed -i 's/dev/abc/g' kustomization.yaml 
-    - git add . && git commit -m  "abc" && git push https://abdelhakamami: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@github.com/abdelhakamami/devops.git
+    - git add . && git commit -m  "abc" && git push origin https://abdelhakamami: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@github.com/abdelhakamami/devops.git
     
     
 
