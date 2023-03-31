@@ -9,6 +9,8 @@ steps:
   - echo hello
 - name: deploy
   image: alpine/git:2.36.3 
+  environment:
+      GIT_PASSWORD: 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
   commands:
     #- git config --global user.email "drone@github.com"
     - git config --global user.name "abdelhakamami"
