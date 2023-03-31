@@ -10,8 +10,8 @@ steps:
 - name: deploy
   image: bitnami/git:latest 
   commands:
-    - git config --global user.email "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@github.com"
-    - git config --global user.name "drone"
+    #- git config --global user.email "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@github.com"
+    - git config --global user.name "abdelhakavaxia"
     - git config --global user.password "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"
     - git clone https://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@github.com/abdelhakamami/devops.git
     - git clone https://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@github.com/abdelhakamami/electionApp.git
