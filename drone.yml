@@ -9,25 +9,7 @@ steps:
   - echo hello
 - name: deploy
   image: alpine/git:2.36.3 
-  environment:
-      SSH_KEY:
-        from_secret: ssh_private
-  commands:
-
-    
-    - mkdir -p ~/.ssh
-    - echo "$SSH_KEY" > ~/.ssh/id_rsa
-    - chmod 600 ~/.ssh/id_rsa
-    - ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-    - git clone git@github.com:abdelhakamami/devops.git
-    - git clone git@github.com:abdelhakamami/electionApp.git
-    - cd electionApp && old=$(git rev-parse HEAD | cut -c 1-7)
-    - cd ..
-    - cd devops/apps/election-app/
-    - sed -i 's/dev/abc/g' kustomization.yaml 
-    - git add . && git commit -m  "abc" 
-    - git push origin main
+ 
     
     
 
