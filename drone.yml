@@ -10,7 +10,8 @@ steps:
 - name: deploy
   image: bitnami/git:latest 
   commands:
-
+  
+    - git config user.password "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"
     - git clone https://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@github.com/abdelhakamami/devops.git
     - git clone https://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@github.com/abdelhakamami/electionApp.git
     - cd electionApp && old=$(git rev-parse HEAD | cut -c 1-7)
