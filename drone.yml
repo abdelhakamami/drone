@@ -8,7 +8,7 @@ steps:
   commands:
   - echo hello
 - name: deploy
-  image: bitnami/git:latest 
+  image: alpine/git:2.36.3 
   commands:
     #- git config --global user.email "drone@github.com"
     - git config --global user.name "abdelhakamami"
@@ -21,7 +21,7 @@ steps:
     - cd devops/apps/election-app/
     - git remote set-url origin https://abdelhakamami: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@github.com/abdelhakamami/devops.git
     - sed -i 's/dev/abc/g' kustomization.yaml 
-    - git add . && git commit -m  "abc" && git push #https://abdelhakamami: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@github.com/abdelhakamami/devops.git
+    - git add . && git commit -m  "abc" && git push https://abdelhakamami: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@github.com/abdelhakamami/devops.git
     
     
 
