@@ -14,8 +14,8 @@ steps:
     
 
 
-    - git clone https://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@github.com/abdelhakamami/devops.git
-    - git clone https://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@github.com/abdelhakamami/electionApp.git
+    - git clone https://abdelhakamami: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@github.com/abdelhakamami/devops.git
+    - git clone https://abdelhakamami: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@github.com/abdelhakamami/electionApp.git
     - cd electionApp && old=$(git rev-parse HEAD | cut -c 1-7)
     
     - cd ..
