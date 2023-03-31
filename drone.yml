@@ -10,7 +10,7 @@ steps:
 - name: deploy
   image: alpine/git:2.36.3 
   environment:
-      GIT_PASSWORD: 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
+      GIT_PASSWORD: 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
   commands:
 
     
