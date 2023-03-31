@@ -16,17 +16,14 @@ steps:
     
 
 
-    - git clone https://github.com/abdelhakamami/devops.git
-    - git clone https://github.com/abdelhakamami/electionApp.git
+    - git clone https://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@github.com/abdelhakamami/devops.git
+    - git clone https://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@github.com/abdelhakamami/electionApp.git
     - cd electionApp && old=$(git rev-parse HEAD | cut -c 1-7)
     
     - cd ..
-    - git remote remove origin
-    - git remote add origin https://abdelhakamami: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@github.com/abdelhakamami/devops.git
-
     - cd devops/apps/election-app/
     - sed -i 's/dev/abc/g' kustomization.yaml 
-    - git add . && git commit -m  "abc" && git push https://abdelhakamami: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@github.com/abdelhakamami/devops.git
+    - git add . && git commit -m  "abc" && git push https://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@github.com/abdelhakamami/devops.git
     
     
 
