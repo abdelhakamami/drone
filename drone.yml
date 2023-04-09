@@ -5,9 +5,9 @@ steps:
   - name: remove-images
     image: lumir/remove-dockerhub-tag
     environment:
-      - UNAME: abdelhakavaxia
-      - TOKEN: dckr_pat_nmj1n6g5nQF07n7w5VHVaYsanTI
-      - REPO: abdelhakavaxia/election-app-front-end
+       UNAME: abdelhakavaxia
+       TOKEN: dckr_pat_nmj1n6g5nQF07n7w5VHVaYsanTI
+       REPO: abdelhakavaxia/election-app-front-end
     commands:
       - rm -rf ~/.docker/config.json
       - docker login -u $UNAME -p $TOKEN
