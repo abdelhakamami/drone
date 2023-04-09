@@ -3,7 +3,7 @@ name: remove-images
 type: kubernetes 
 steps:
   - name: remove-images
-    image: alekslitvinenk/dind
+    image: docker:18.09.6
 
     environment:
        UNAME: abdelhakavaxia
