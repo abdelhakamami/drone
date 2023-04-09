@@ -6,7 +6,7 @@ steps:
 - name: test
   image: docker:dind
   volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
+  - /var/run/docker.sock:/var/run/docker.sock
   commands:
   - apk add --no-cache curl jq
   - chmod +x remove_images.sh
