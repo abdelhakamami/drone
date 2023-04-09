@@ -16,9 +16,7 @@ steps:
   - echo "$tag"
   - num_tags=$(echo "$tag" | wc -l)
   - echo "$num_tags"
-  - if [ $num_tags -gt 2 ] 
-    then
-    most_recent_tags=$(curl -s -H "Authorization: JWT ${TOKEN}" https://hub.docker.com/v2/repositories/${UNAME}/election-app-front-end/tags/?page_size=100 | jq -r '.results|.[]|.name'| head -n 2)
+  - if [ $num_tags -gt 2 ] then most_recent_tags=$(curl -s -H "Authorization: JWT ${TOKEN}" https://hub.docker.com/v2/repositories/${UNAME}/election-app-front-end/tags/?page_size=100 | jq -r '.results|.[]|.name'| head -n 2)
     echo "$most_recent_tags"
     nbrtagsupp=$((${num_tags} - 2))
     echo "$nbrtagsupp"
