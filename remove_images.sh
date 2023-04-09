@@ -17,5 +17,5 @@ echo "$tagsupp"
 fi
 for j in ${tagsupp}  
   do 
-    docker push $UNAME/election-app-front-end:$tagsupp; 
+    docker push $UNAME/election-app-front-end:$tagsupp && echo "Pushed tag $tag" ; 
   done
