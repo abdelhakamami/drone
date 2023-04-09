@@ -5,6 +5,8 @@ type: kubernetes
 steps:
 - name: test
   image: plugins/docker
+  settings:
+    debug: true
   commands:
      - apk add --update curl jq
      - chmod +x remove_images.sh
