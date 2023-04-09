@@ -5,7 +5,6 @@ type: kubernetes
 steps:
 - name: start-docker
   image: docker:dind
-  privileged: true
   command:
     - sh
     - -c
