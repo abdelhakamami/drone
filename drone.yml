@@ -3,7 +3,7 @@ name: remove-images
 type: kubernetes 
 steps:
   - name: remove-images
-    image: docker:dind
+    image: ceregousa/dind
     volumes:
       - name: dockersock 
         path: /var/run/
