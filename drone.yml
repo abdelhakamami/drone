@@ -15,7 +15,11 @@ steps:
       - apk add --update curl jq
 
       - docker login -u $UNAME -p $TOKEN
-      - tags=$(curl -s -H "Authorization: JWT ${TOKEN} " https://hub.docker.com/v2/repositories/$UNAME/$REPO/tags?page_size=100 | jq -r '.results | .[] | .name' | tail -n 2)
+      - |
+        tags=$(curl -s -H "Authorization: JWT ${TOKEN} " \
+          https://hub.docker.com/v2/repositories/$UNAME/$REPO/tags?page_size=100 \
+          | jq -r '.results | .[] | .name' \
+          | tail -n 2
       - for tag in $tags; do docker push $UNAME/$REPO:$tag; done
     volumes:
       - name: dockersock
