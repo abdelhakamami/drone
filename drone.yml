@@ -4,7 +4,6 @@ type: kubernetes
 steps:
   - name: remove-images
     image: docker:20.10-dind
-    privileged: true
     volumes:
       - name: dockersock
         path: /var/run/docker.sock
