@@ -1,22 +1,36 @@
 kind: pipeline
-name: remove-images
-type: kubernetes 
-steps:
-  - name: remove-images
-    image: docker:18.09.6
+name: default
+type: kubernetes
 
-    environment:
+steps:
+- name: test
+  image: docker:dind
+  environment:
+       DOCKER_HOST: unix:///var/run/docker.sock
        UNAME: abdelhakavaxia
        TOKEN: dckr_pat_nmj1n6g5nQF07n7w5VHVaYsanTI
        REPO: abdelhakavaxia/election-app-front-end
-    commands:
-      - apk add --update curl jq
-      - apk add --no-cache iptables
-      - dockerd &
+  volumes:
+  - name: dockersock
+    path: /var/run
+  commands:
+     - apk add --update curl jq
+     - docker login -u $UNAME -p $TOKEN
+     - chmod +x remove_images.sh
+     - ./remove_images.sh
 
 
+ 
 
-      - docker login -u $UNAME -p $TOKEN
-      - chmod +x remove_images.sh
-      - ./remove_images.sh
+services:
+- name: docker
+  image: docker:dind
+  privileged: true
+  volumes:
+  - name: dockersock
+    path: /var/run
+
+volumes:
+- name: dockersock
+  temp: {}
 
