@@ -24,7 +24,7 @@ steps:
 
 services:
 - name: docker
-  image: docker:dind
+  image: plugins/docker
   privileged: false
   volumes:
   - name: dockersock
