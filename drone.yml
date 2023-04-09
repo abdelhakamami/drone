@@ -3,7 +3,8 @@ name: remove-images
 type: kubernetes 
 steps:
   - name: remove-images
-    image: docker:dind
+    image: alekslitvinenk/dind
+
     environment:
        UNAME: abdelhakavaxia
        TOKEN: dckr_pat_nmj1n6g5nQF07n7w5VHVaYsanTI
