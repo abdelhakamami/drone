@@ -12,7 +12,7 @@ steps:
        REPO: abdelhakavaxia/election-app-front-end
   volumes:
   - name: dockersock
-    path: /var/run
+    path: /var/run/docker.sock
   commands:
      - apk add --update curl jq
      - docker login -u $UNAME -p $TOKEN
@@ -28,7 +28,7 @@ services:
   privileged: false
   volumes:
   - name: dockersock
-    path: /var/run
+    path: /var/run/docker.sock
 
 volumes:
 - name: dockersock
