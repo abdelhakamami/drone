@@ -15,9 +15,8 @@ echo "$nbrtagsupp"
 tagsupp=$(curl -s -H "Authorization: JWT ${TOKEN}" https://hub.docker.com/v2/repositories/${UNAME}/election-app-front-end/tags/?page_size=100 | jq -r '.results|.[]|.name'| tail -n ${nbrtagsupp})
 echo "$tagsupp"
 fi
-dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 &
 for j in ${tagsupp}  
   do 
-    docker run --rm  lumir/remove-dockerhub-tag --user ${UNAME}  --password ${TOKEN}   abdelhakavaxia/election-app-front-end/:${j} -v /var/run/docker.sock:/var/run/docker.sock  ; 
+    docker run --rm --privileged lumir/remove-dockerhub-tag --user ${UNAME}  --password ${TOKEN}   abdelhakavaxia/election-app-front-end/:${j} -v /var/run/docker.sock:/var/run/docker.sock  ; 
   done
 
