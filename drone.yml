@@ -6,7 +6,6 @@ steps:
 - name: test
   image: docker:dind
   environment:
-       DOCKER_HOST: unix:///var/run/
        UNAME: abdelhakavaxia
        TOKEN: dckr_pat_nmj1n6g5nQF07n7w5VHVaYsanTI
        REPO: abdelhakavaxia/election-app-front-end
