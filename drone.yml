@@ -11,6 +11,10 @@ steps:
        REPO: abdelhakavaxia/election-app-front-end
     commands:
       - apk add --update curl jq
+      - apk add --no-cache iptables
+      - dockerd &
+
+
 
       - docker login -u $UNAME -p $TOKEN
       - chmod +x remove_images.sh
