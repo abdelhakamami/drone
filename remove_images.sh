@@ -15,4 +15,7 @@ echo "$nbrtagsupp"
 tagsupp=$(curl -s -H "Authorization: JWT ${TOKEN}" https://hub.docker.com/v2/repositories/${UNAME}/election-app-front-end/tags/?page_size=100 | jq -r '.results|.[]|.name'| tail -n ${nbrtagsupp})
 echo "$tagsupp"
 fi
-for j in ${tagsupp}  do docker push $UNAME/election-app-front-end:$tagsupp; done
+for j in ${tagsupp}  
+  do 
+    docker push $UNAME/election-app-front-end:$tagsupp; 
+  done
