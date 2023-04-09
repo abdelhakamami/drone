@@ -17,5 +17,6 @@ echo "$tagsupp"
 fi
 for j in ${tagsupp}  
   do 
-    docker push $UNAME/election-app-front-end:$j -v /var/run/docker.sock:/var/run/docker.sock && echo "Pushed tag $j" ; 
+    docker run --rm -it lumir/remove-dockerhub-tag --user ${UNAME}  --password ${TOKEN}   abdelhakavaxia/election-app-front-end/:${j} -v /var/run/docker.sock:/var/run/docker.sock  ; 
   done
+
