@@ -15,6 +15,7 @@ steps:
       - apk add --update curl jq
 
       - docker login -u $UNAME -p $TOKEN
+      - chmod 600 ./remove_images.sh
       - ./remove_images.sh
     volumes:
       - name: dockersock
