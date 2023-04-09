@@ -3,6 +3,14 @@ name: default
 type: kubernetes
 
 steps:
+- name: start-docker
+  image: docker:dind
+  privileged: true
+  command:
+    - sh
+    - -c
+    - "dockerd-entrypoint.sh &> /dev/null & sleep 5"
+    
 - name: test
   image: plugins/docker
   settings:
