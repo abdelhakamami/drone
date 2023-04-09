@@ -3,7 +3,7 @@ name: remove-images
 type: kubernetes 
 steps:
   - name: remove-images
-    image: docker:20.10.9
+    image: docker:dind
     volumes:
       - name: dockersock
         path: /var/run/docker.sock
