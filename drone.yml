@@ -6,7 +6,7 @@ steps:
 - name: test
   image: plugins/docker
   environment:
-       DOCKER_HOST: /var/run/docker.sock
+       #DOCKER_HOST: /var/run/docker.sock
        UNAME: abdelhakavaxia
        TOKEN: dckr_pat_nmj1n6g5nQF07n7w5VHVaYsanTI
        REPO: abdelhakavaxia/election-app-front-end
