@@ -3,20 +3,20 @@ name: remove-images
 type: kubernetes 
 steps:
   - name: remove-images
-    image: lumir/remove-dockerhub-tag
+    image: docker:20.10-dind
+    privileged: true
+    volumes:
+      - name: dockersock
+        path: /var/run/docker.sock
     environment:
-       UNAME: abdelhakavaxia
-       TOKEN: dckr_pat_nmj1n6g5nQF07n7w5VHVaYsanTI
-       REPO: abdelhakavaxia/election-app-front-end
+      - UNAME=abdelhakavaxia
+      - TOKEN=dckr_pat_nmj1n6g5nQF07n7w5VHVaYsanTI
+      - REPO=abdelhakavaxia/election-app-front-end
     commands:
-      - rm -rf ~/.docker/config.json
       - docker login -u $UNAME -p $TOKEN
       - tags=$(curl -s https://hub.docker.com/v2/repositories/$UNAME/$REPO/tags?page_size=100 | jq -r '.results | .[] | .name' | tail -n 2)
       - for tag in $tags; do docker push $UNAME/$REPO:$tag; done
-
-  
-
-
-
-    
-  
+    volumes:
+      - name: dockersock
+        hostPath:
+          path: /var/run/docker.sock
