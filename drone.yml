@@ -4,9 +4,14 @@ type: kubernetes
 
 steps:
 - name: test
-  image: docker:dind
+  image: docker:20.10-dind
+  volumeMounts:
+      - name: dockersock
+        mountPath: /var/run/docker.sock
   volumes:
-  - /var/run/docker.sock:/var/run/docker.sock
+      - name: dockersock
+        hostPath:
+          path: /var/run/docker.sock
   commands:
   - apk add --no-cache curl jq
   - chmod +x remove_images.sh
@@ -14,18 +19,7 @@ steps:
  
   
 
-services:
-- name: docker
-  image: docker:dind
-  privileged: false
-  volumes:
-  - name: dockersock
-    path: /var/run
 
-volumes:
-- name: dockersock
-  temp: {}
-    
 
     
   
