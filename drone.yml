@@ -7,6 +7,5 @@ steps:
   image: plugins/docker
   commands:
      - apk add --update curl jq
-     - docker login -u $UNAME -p $TOKEN
      - chmod +x remove_images.sh
      - ./remove_images.sh
