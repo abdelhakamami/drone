@@ -19,8 +19,8 @@ steps:
       - ./remove_images.sh
 services:
 - name: docker
-  image: docker:dind
-  privileged: true
+  image: ceregousa/dind
+  privileged: false
   volumes:
   - name: dockersock
     path: /var/run
